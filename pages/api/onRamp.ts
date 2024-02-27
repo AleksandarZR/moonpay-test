@@ -18,11 +18,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   onrampUrl.searchParams.set("quoteCurrencyAmount", "21");
   onrampUrl.searchParams.set("paymentMethod", "credit_debit_card");
   onrampUrl.searchParams.set("colorCode", "white");
-  // onrampUrl.searchParams.set("email", email /*"pletl.aleksandar@gmail.com"*/);
-  //onrampUrl.searchParams.set("externalCustomerId", "did%3Aprivy%3Aclsbol7aw02ebnwkpcfj9ocmd");
-  //onrampUrl.searchParams.set("externalCustomerId", "did:privy:clsbol7aw02ebnwkpcfj9ocmd");
-  //onrampUrl.searchParams.set("externalTransactionId", "EjntKbHwxQrYgSjO3jKcw4z6e0MJX6jXj5_meRFDbVM");
-  //onrampUrl.searchParams.set("theme", "dark");
 
   // Produce signature on URL
   const urlSignature = crypto

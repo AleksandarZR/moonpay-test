@@ -8,24 +8,18 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
     const getOnrampUrl = async () => {
         const currentUrl = window.location.href; // Get URL of current page
-        //const authToken = await getAccessToken(); // Get Privy auth token
         const body = { address: '0x66d74e98feE7fc2d56d1e6E093e50b37DB28A6F5', email: 'misa.pletl@yahoo.com', redirectUrl: currentUrl };
-
-        console.log('body');
-        console.log(body);
 
         try {
             const response = await fetch("/api/onRamp", {
                 headers: {
                     "Content-type": "application/json",
-                    //"Authorization": `Bearer ${authToken}`,
                 },
                 method: "post",
                 body: JSON.stringify(body),
             });
 
             const data = await response.json();
-            console.log('fundAbstractionAccountWallet - data.url: ' + data.url);
             return data.url;
         } catch (err: any) {
             console.error(err);
